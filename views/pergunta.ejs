@@ -1,0 +1,44 @@
+<%- include ('partials/header.ejs') %> 
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <hr>
+        <h1><%= pergunta.titulo %></h1>
+        <p class="ml-4 mt-2"><%= pergunta.descricao %></p>
+        <h4 class="pergunta-realiada"><span class="pergunta-realiada-texto"><%= `Pergunta publicada em: ${moment(pergunta.createdAt).format('DD/MM/YYYY HH:mm:ss')}` %></span></h4>
+        <hr>
+
+        <form action="/salvar-resposta" method="POST">
+            <h3>Responda</h3>
+            <label for="corpo" class="required">Resposta</label>
+            <textarea name="corpo" required id="corpo" placeholder="Digete sua resposta" class="form-control"></textarea>
+            <input type="hidden" name="perguntaId" value="<%= pergunta.id %>">
+            <div class="btn-responder mt-2 mb-3">
+                <button type="submit" class="btn btn-aqua">Responder</button>
+            </div>
+        </form>
+
+        <% if (respostas.length === 0) { %>
+            <hr>
+            <div class="container sem-respostas">
+                <h5>Pergunta sem respostas. Seja o primeiro a responder!</h5>
+            </div>
+            
+        <% } else { %>
+            <hr>
+            <h3>Respostas</h3>
+            <% respostas.forEach((val, index, array) => { %>
+                <div class="corpo">
+                    <p><%= val.corpo %></p>
+                </div>
+                <h4 class="pergunta-realiada"><span class="pergunta-realiada-texto"><%= `Resposta publicada em: ${moment(val.  createdAt).format('DD/MM/YYYY HH:mm:ss')}` %></span></h4>
+
+                <% if (index !== (array.length - 1)) { %>
+                    <hr>
+                <% } %>
+            <% }) %>
+        <% } %>
+    </div>
+</body>
+<%- include ('partials/bootstrap-script-import.ejs') %> 
+

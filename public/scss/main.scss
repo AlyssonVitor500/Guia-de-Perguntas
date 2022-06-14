@@ -1,0 +1,83 @@
+$color-aqua: rgb(22, 160, 206);
+$main-background-color: #eceff1;
+$error-color: rgba(217, 48, 19, 0.848);
+
+body {
+    background-color: $main-background-color;
+}
+
+.btn-aqua {
+    background-color: $color-aqua;
+    color: white;
+
+    &:hover {
+        color: white !important;
+        background-color: lighten($color-aqua, 10%);
+    }
+}
+
+.btn-home {
+    color: white;
+    transition: .5s;
+    font-size: 2em;
+
+    &:hover {
+        color: darken(white, 20%);
+    }
+}
+
+#formulario-pergunta {
+    margin-top: 5vh;
+}
+
+.required::after {
+    content: '*';
+    color: $error-color;
+}
+
+.header-total {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.link-resposta, .btn-responder{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.sem-respostas {
+    height: 6vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resposta-enviada {
+    background-color: $color-aqua;
+}
+
+.card-body-meio {
+    display: flex;
+    align-items: center;
+}
+
+.corpo {
+    width: calc(100% - .2em);
+    min-height: 2vh;
+    margin-top: .2em;
+    margin-left: .2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: .7em;
+}
+
+.pergunta-realiada {
+    display: flex;
+    justify-content: flex-end;
+    font-size: .8em;
+    color: rgb(63, 88, 131);
+}

@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %> 
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container mt-3">
+        <div class="header-total">
+            <div><h3>Perguntas (Total de perguntas: <%= perguntas.length %>) </h3></div>
+            <div><a href="/perguntar" class="btn btn-primary">Perguntar <i class="fa fa-plus-circle" aria-hidden="true"></i></a></div>
+        </div>
+        <hr>
+        
+        <div class="container-fluid">
+        
+            <% if (perguntas.length === 0) { %>
+                <div class="container">
+                    <img src="/img/no_questions.png" width="500" class="rounded mx-auto d-block"  alt="no questions">
+                </div>
+                
+            <% } %>
+            <% perguntas.forEach((val, index, array) => { %>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h3><%= val.titulo %></h3>
+                        <h4 class="pergunta-realiada"><span class="pergunta-realiada-texto"><%= `Pergunta publicada em: ${moment(val.  createdAt).format('DD/MM/YYYY HH:mm:ss')}` %></span></h4>
+                    </div>
+                    <div class="card-footer link-resposta">
+                        <a href="/pergunta/<%= val.id %>" href class="btn btn-aqua">Responder</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+<%- include ('partials/bootstrap-script-import.ejs') %> 

@@ -1,0 +1,77 @@
+body {
+  background-color: #eceff1;
+}
+
+.btn-aqua {
+  background-color: rgb(22, 160, 206);
+  color: white;
+}
+.btn-aqua:hover {
+  color: white !important;
+  background-color: #2ebae9;
+}
+
+.btn-home {
+  color: white;
+  transition: 0.5s;
+  font-size: 2em;
+}
+.btn-home:hover {
+  color: #cccccc;
+}
+
+#formulario-pergunta {
+  margin-top: 5vh;
+}
+
+.required::after {
+  content: "*";
+  color: rgba(217, 48, 19, 0.848);
+}
+
+.header-total {
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.link-resposta, .btn-responder {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.sem-respostas {
+  height: 6vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resposta-enviada {
+  background-color: rgb(22, 160, 206);
+}
+
+.card-body-meio {
+  display: flex;
+  align-items: center;
+}
+
+.corpo {
+  width: calc(100% - 0.2em);
+  min-height: 2vh;
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.7em;
+}
+
+.pergunta-realiada {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8em;
+  color: rgb(63, 88, 131);
+}

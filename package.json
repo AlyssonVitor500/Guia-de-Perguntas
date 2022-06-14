@@ -1,0 +1,27 @@
+{
+  "name": "guiaperguntas",
+  "version": "1.0.0",
+  "description": "Uma plataforma de perguntas e respostas ao estilo Yahoo respostas",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass --no-source-map --watch public/scss:public/css",
+    "nodemon-watch": "nodemon index.js -e *",
+    "dev": "npm-run-all --parallel sass-watch nodemon-watch",
+    "server": "node index.js"
+  },
+  "author": "Alysson Sousa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.20.0",
+    "ejs": "3.1.8",
+    "express": "4.17.1",
+    "moment": "^2.29.3",
+    "mysql2": "^2.3.3",
+    "sass": "1.52.3",
+    "sequelize": "5.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.16",
+    "npm-run-all": "4.1.5"
+  }
+}
